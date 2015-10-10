@@ -13,7 +13,7 @@ Usage
 
 Simply run `vagrant up centos_box` or `vagrant up ubuntu_box` in root project directory.
 
-Run applicatin http://172.28.128.X:8080/testweb/ ( usualy x=3)
+Run application http://172.28.128.X:8080/testweb/ ( usualy x=3)
 
 Change attributes for jboss-dev-cookbook
 -----
