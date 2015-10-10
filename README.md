@@ -1,7 +1,7 @@
 About this Test project
 -----
 
-Vagrant + Chef jboss cookbook + test application ( http://www.cumulogic.com/download/Apps/testweb.zip )
+Vagrant +Chef jboss cookbook +test application (http://www.cumulogic.com/download/Apps/testweb.zip)
 
 Tested platforms
 -----
@@ -14,6 +14,8 @@ Usage
 Simply run `vagrant up centos_box` or `vagrant up ubuntu_box` in root project directory.
 
 Run application http://172.28.128.X:8080/testweb/ ( usualy x=3)
+
+Change nodes-vagrant.json file (jboss-dev-cookbook::default) for deploying jboss applicatin only.
 
 Change attributes for jboss-dev-cookbook
 -----
