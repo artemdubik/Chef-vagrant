@@ -1,0 +1,584 @@
+Bringing machine 'centos_box' up with 'virtualbox' provider...
+==> centos_box: Importing base box 'centos-6.6'...
+[KProgress: 10%[KProgress: 20%[KProgress: 30%[KProgress: 40%[KProgress: 60%[KProgress: 80%[KProgress: 90%[K==> centos_box: Matching MAC address for NAT networking...
+==> centos_box: Setting the name of the VM: devops
+==> centos_box: Clearing any previously set forwarded ports...
+==> centos_box: Clearing any previously set network interfaces...
+==> centos_box: Preparing network interfaces based on configuration...
+    centos_box: Adapter 1: nat
+    centos_box: Adapter 2: hostonly
+==> centos_box: Forwarding ports...
+    centos_box: 22 => 2222 (adapter 1)
+==> centos_box: Running 'pre-boot' VM customizations...
+==> centos_box: Booting VM...
+==> centos_box: Waiting for machine to boot. This may take a few minutes...
+    centos_box: SSH address: 127.0.0.1:2222
+    centos_box: SSH username: vagrant
+    centos_box: SSH auth method: private key
+    centos_box: Warning: Connection timeout. Retrying...
+    centos_box: Warning: Remote connection disconnect. Retrying...
+    centos_box: 
+    centos_box: Vagrant insecure key detected. Vagrant will automatically replace
+    centos_box: this with a newly generated keypair for better security.
+    centos_box: 
+    centos_box: Inserting generated public key within guest...
+    centos_box: Removing insecure key from the guest if it's present...
+    centos_box: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> centos_box: Machine booted and ready!
+==> centos_box: Checking for guest additions in VM...
+    centos_box: The guest additions on this VM do not match the installed version of
+    centos_box: VirtualBox! In most cases this is fine, but in rare cases it can
+    centos_box: prevent things such as shared folders from working properly. If you see
+    centos_box: shared folder errors, please make sure the guest additions within the
+    centos_box: virtual machine match the version of VirtualBox you have installed on
+    centos_box: your host and reload your VM.
+    centos_box: 
+    centos_box: Guest Additions Version: 4.3.28
+    centos_box: VirtualBox Version: 5.0
+==> centos_box: Configuring and enabling network interfaces...
+==> centos_box: Mounting shared folders...
+    centos_box: /vagrant => /home/artem/Chef-vagrant
+    centos_box: /tmp/vagrant-chef/b929c6190ca96602a6b759b6984e8e51/roles => /home/artem/Chef-vagrant/roles
+    centos_box: /tmp/vagrant-chef/a6ca504d47f0c5e8b45f3921cb870625/cookbooks => /home/artem/Chef-vagrant/cookbooks
+    centos_box: /tmp/vagrant-chef/e0afe9bd14ca0cbc80f7102d67d8004b/data_bags => /home/artem/Chef-vagrant/data_bags
+    centos_box: /tmp/vagrant-chef/4641432f5ab1eb50f5669f29066d9a92/environments => /home/artem/Chef-vagrant/environments
+==> centos_box: Running provisioner: chef_solo...
+    centos_box: Installing Chef (latest)...
+Generating chef JSON and uploading...
+==> centos_box: Warning: Chef run list is empty. This may not be what you want.
+==> centos_box: Running chef-solo...
+==> centos_box: [2015-10-10T19:16:39+02:00] INFO: Forking chef instance to converge...
+==> centos_box: Starting Chef Client, version 12.5.1
+==> centos_box: [2015-10-10T19:16:39+02:00] INFO: *** Chef 12.5.1 ***
+==> centos_box: [2015-10-10T19:16:39+02:00] INFO: Chef-client pid: 8506
+==> centos_box: [2015-10-10T19:16:42+02:00] INFO: Setting the run_list to ["recipe[jboss-dev-cookbook::deploy]"] from CLI options
+==> centos_box: [2015-10-10T19:16:42+02:00] INFO: Run List is [recipe[jboss-dev-cookbook::deploy]]
+==> centos_box: [2015-10-10T19:16:42+02:00] INFO: Run List expands to [jboss-dev-cookbook::deploy]
+==> centos_box: [2015-10-10T19:16:42+02:00] INFO: Starting Chef Run for localhost
+==> centos_box: [2015-10-10T19:16:42+02:00] INFO: Running start handlers
+==> centos_box: [2015-10-10T19:16:42+02:00] INFO: Start handlers complete.
+==> centos_box: Compiling Cookbooks...
+==> centos_box: [2015-10-10T19:16:42+02:00] WARN: Cloning resource attributes for service[jboss] from prior resource (CHEF-3694)
+==> centos_box: [2015-10-10T19:16:42+02:00] WARN: Previous service[jboss]: /tmp/vagrant-chef/a6ca504d47f0c5e8b45f3921cb870625/cookbooks/jboss-dev-cookbook/recipes/default.rb:95:in `from_file'
+==> centos_box: [2015-10-10T19:16:42+02:00] WARN: Current  service[jboss]: /tmp/vagrant-chef/a6ca504d47f0c5e8b45f3921cb870625/cookbooks/jboss-dev-cookbook/recipes/deploy.rb:20:in `from_file'
+==> centos_box: Converging 20 resources
+==> centos_box: Recipe: java::openjdk
+==> centos_box:   
+==> centos_box: * yum_package[java-1.7.0-openjdk] action install
+==> centos_box: [2015-10-10T19:16:43+02:00] INFO: yum_package[java-1.7.0-openjdk] installing java-1.7.0-openjdk-1.7.0.85-2.6.1.3.el6_7 from updates repository
+==> centos_box: [2015-10-10T19:19:13+02:00] INFO: yum_package[java-1.7.0-openjdk] installed java-1.7.0-openjdk at 1.7.0.85-2.6.1.3.el6_7
+==> centos_box: 
+==> centos_box:     - install version 1.7.0.85-2.6.1.3.el6_7 of package java-1.7.0-openjdk
+==> centos_box:   * yum_package[java-1.7.0-openjdk-devel] action install
+==> centos_box: [2015-10-10T19:19:13+02:00] INFO: yum_package[java-1.7.0-openjdk-devel] installing java-1.7.0-openjdk-devel-1.7.0.85-2.6.1.3.el6_7 from updates repository
+==> centos_box: [2015-10-10T19:19:51+02:00] INFO: yum_package[java-1.7.0-openjdk-devel] installed java-1.7.0-openjdk-devel at 1.7.0.85-2.6.1.3.el6_7
+==> centos_box:     
+==> centos_box: - install version 1.7.0.85-2.6.1.3.el6_7 of package java-1.7.0-openjdk-devel
+==> centos_box:   
+==> centos_box: * java_alternatives[set-java-alternatives] action set
+==> centos_box: 
+==> centos_box:     - Add alternative for appletviewer
+==> centos_box: 
+==> centos_box:     - Add alternative for apt
+==> centos_box: 
+==> centos_box:     - Add alternative for extcheck
+==> centos_box:     
+==> centos_box: - Add alternative for idlj
+==> centos_box: 
+==> centos_box:     - Add alternative for jar
+==> centos_box: 
+==> centos_box:     - Add alternative for jarsigner
+==> centos_box: 
+==> centos_box:     - Add alternative for java
+==> centos_box: 
+==> centos_box:     - Add alternative for javac
+==> centos_box: 
+==> centos_box:     - Add alternative for javadoc
+==> centos_box: 
+==> centos_box:     - Add alternative for javah
+==> centos_box: 
+==> centos_box:     - Add alternative for javap
+==> centos_box: 
+==> centos_box:     - Add alternative for jcmd
+==> centos_box: 
+==> centos_box:     - Add alternative for jconsole
+==> centos_box: 
+==> centos_box:     - Add alternative for jdb
+==> centos_box: 
+==> centos_box:     - Add alternative for jhat
+==> centos_box: 
+==> centos_box:     - Add alternative for jinfo
+==> centos_box: 
+==> centos_box:     - Add alternative for jmap
+==> centos_box: 
+==> centos_box:     - Add alternative for jps
+==> centos_box:     
+==> centos_box: - Add alternative for jrunscript
+==> centos_box: 
+==> centos_box:     - Add alternative for jsadebugd
+==> centos_box: 
+==> centos_box:     - Add alternative for jstack
+==> centos_box: 
+==> centos_box:     - Add alternative for jstat
+==> centos_box: 
+==> centos_box:     - Add alternative for jstatd
+==> centos_box: 
+==> centos_box:     - Add alternative for keytool
+==> centos_box:     
+==> centos_box: - Add alternative for native2ascii
+==> centos_box: 
+==> centos_box:     - Add alternative for orbd
+==> centos_box: 
+==> centos_box:     - Add alternative for pack200
+==> centos_box: 
+==> centos_box:     - Add alternative for policytool
+==> centos_box: 
+==> centos_box:     - Add alternative for rmic
+==> centos_box: 
+==> centos_box:     - Add alternative for rmid
+==> centos_box: 
+==> centos_box:     - Add alternative for rmiregistry
+==> centos_box: 
+==> centos_box:     - Add alternative for schemagen
+==> centos_box:     
+==> centos_box: - Add alternative for serialver
+==> centos_box: 
+==> centos_box:     - Add alternative for servertool
+==> centos_box: 
+==> centos_box:     - Add alternative for tnameserv
+==> centos_box: 
+==> centos_box:     - Add alternative for unpack200
+==> centos_box: 
+==> centos_box:     - Add alternative for wsgen
+==> centos_box:     
+==> centos_box: - Add alternative for wsimport
+==> centos_box: 
+==> centos_box:     - Add alternative for xjc
+==> centos_box: 
+==> centos_box: Recipe: java::set_java_home
+==> centos_box:   * ruby_block[set-env-java-home] action run[2015-10-10T19:19:59+02:00] INFO: ruby_block[set-env-java-home] called
+==> centos_box: 
+==> centos_box:     - execute the ruby block set-env-java-home
+==> centos_box:   * directory[/etc/profile.d] action create (up to date)
+==> centos_box:   * file[/etc/profile.d/jdk.sh] action create
+==> centos_box: [2015-10-10T19:19:59+02:00] INFO: file[/etc/profile.d/jdk.sh] created file /etc/profile.d/jdk.sh
+==> centos_box:     
+==> centos_box: - create new file /etc/profile.d/jdk.sh
+==> centos_box: [2015-10-10T19:19:59+02:00] INFO: file[/etc/profile.d/jdk.sh] updated file contents /etc/profile.d/jdk.sh
+==> centos_box:     
+==> centos_box: - update content in file /etc/profile.d/jdk.sh from none to b45e89
+==> centos_box:     
+==> centos_box: --- /etc/profile.d/jdk.sh	2015-10-10 19:19:59.083005167 +0200
+==> centos_box:     
+==> centos_box: +++ /etc/profile.d/.jdk.sh20151010-8506-lhmjy5	2015-10-10 19:19:59.083005167 +0200
+==> centos_box:     
+==> centos_box: @@ -1 +1,2 @@
+==> centos_box:     
+==> centos_box: +export JAVA_HOME=/usr/lib/jvm/java-1.7.0
+==> centos_box: [2015-10-10T19:19:59+02:00] INFO: file[/etc/profile.d/jdk.sh] mode changed to 755
+==> centos_box:     
+==> centos_box: - change mode from '' to '0755'
+==> centos_box:     
+==> centos_box: - restore selinux security context
+==> centos_box: Recipe: jboss-dev-cookbook::default
+==> centos_box:   
+==> centos_box: * user[jboss] action create
+==> centos_box: [2015-10-10T19:19:59+02:00] INFO: user[jboss] created
+==> centos_box: 
+==> centos_box:     - create user jboss
+==> centos_box:   * yum_package[unzip] action install
+==> centos_box: [2015-10-10T19:19:59+02:00] INFO: yum_package[unzip] installing unzip-6.0-2.el6_6 from base repository
+==> centos_box: [2015-10-10T19:20:00+02:00] INFO: yum_package[unzip] installed unzip at 6.0-2.el6_6
+==> centos_box:     
+==> centos_box: - install version 6.0-2.el6_6 of package unzip
+==> centos_box:   
+==> centos_box: * bash[download jboss-eap] action run
+==> centos_box: [2015-10-10T19:22:17+02:00] INFO: bash[download jboss-eap] ran successfully
+==> centos_box: 
+==> centos_box:     - execute "bash"  "/tmp/chef-script20151010-8506-lwpfra"
+==> centos_box:   * template[/etc/init.d/jboss] action create
+==> centos_box: [2015-10-10T19:22:17+02:00] INFO: template[/etc/init.d/jboss] created file /etc/init.d/jboss
+==> centos_box:     
+==> centos_box: - create new file /etc/init.d/jboss
+==> centos_box: [2015-10-10T19:22:17+02:00] INFO: template[/etc/init.d/jboss] updated file contents /etc/init.d/jboss
+==> centos_box:     
+==> centos_box: - update content in file /etc/init.d/jboss from none to b8a2ca
+==> centos_box:     
+==> centos_box: --- /etc/init.d/jboss	2015-10-10 19:22:17.828004754 +0200
+==> centos_box:     
+==> centos_box: +++ /etc/init.d/.jboss20151010-8506-7w9k2k	2015-10-10 19:22:17.827004754 +0200
+==> centos_box:     
+==> centos_box: @@ -1 +1,199 @@
+==> centos_box:     
+==> centos_box: +#!/bin/sh
+==> centos_box:     
+==> centos_box: +#
+==> centos_box:     
+==> centos_box: +# jboss control script
+==> centos_box:     
+==> centos_box: +#
+==> centos_box:     
+==> centos_box: +# chkconfig: - 80 20
+==> centos_box:     
+==> centos_box: +# description: jboss startup script
+==> centos_box:     
+==> centos_box: +# processname: jboss
+==> centos_box:     
+==> centos_box: +# pidfile: /var/run/jboss/jboss.pid
+==> centos_box:     
+==> centos_box: +# config: /etc/default/jboss.conf
+==> centos_box:     
+==> centos_box: +#
+==> centos_box:     
+==> centos_box: +
+==> centos_box:     +# Source function library.
+==> centos_box:     +. /etc/init.d/functions
+==> centos_box:     +
+==> centos_box:     +# Load Java configuration.
+==> centos_box:     +[ -r /etc/java/java.conf ] && . /etc/java/java.conf
+==> centos_box:     +export JAVA_HOME
+==> centos_box:     +
+==> centos_box:     +# Load JBoss AS init.d configuration.
+==> centos_box:     +if [ -z "$JBOSS_CONF" ]; then
+==> centos_box:     +	JBOSS_CONF="/etc/jboss-as/jboss-as.conf"
+==> centos_box:     +fi
+==> centos_box:     +
+==> centos_box:     +[ -r "$JBOSS_CONF" ] && . "${JBOSS_CONF}"
+==> centos_box:     +
+==> centos_box:     +# Set defaults.
+==> centos_box:     +
+==> centos_box:     +if [ -z "$JBOSS_HOME" ]; then
+==> centos_box:     +	JBOSS_HOME=/opt/jboss
+==> centos_box:     +fi
+==> centos_box:     +export JBOSS_HOME
+==> centos_box:     +
+==> centos_box:     +if [ -z "$JBOSS_PIDFILE" ]; then
+==> centos_box:     +	JBOSS_PIDFILE=/var/run/jboss/jboss.pid
+==> centos_box:     +fi
+==> centos_box:     +export JBOSS_PIDFILE
+==> centos_box:     +
+==> centos_box:     +if [ -z "$JBOSS_CONSOLE_LOG" ]; then
+==> centos_box:     +	JBOSS_CONSOLE_LOG=/var/log/jboss/console.log
+==> centos_box:     +fi
+==> centos_box:     +
+==> centos_box:     +if [ -z "$STARTUP_WAIT" ]; then
+==> centos_box:     +	STARTUP_WAIT=30
+==> centos_box:     +fi
+==> centos_box:     +
+==> centos_box:     +if [ -z "$SHUTDOWN_WAIT" ]; then
+==> centos_box:     +	SHUTDOWN_WAIT=30
+==> centos_box:     +fi
+==> centos_box:     +
+==> centos_box:     +# Startup mode of jboss
+==> centos_box:     +if [ -z "$JBOSS_MODE" ]; then
+==> centos_box:     +	JBOSS_MODE=standalone
+==> centos_box:     +fi
+==> centos_box:     +
+==> centos_box:     +# Startup mode script
+==> centos_box:     +if [ "$JBOSS_MODE" = "standalone" ]; then
+==> centos_box:     +	JBOSS_SCRIPT=$JBOSS_HOME/bin/standalone.sh
+==> centos_box:     +	if [ -z "$JBOSS_CONFIG" ]; then
+==> centos_box:     +		JBOSS_CONFIG=standalone.xml
+==> centos_box:     +	fi
+==> centos_box:     +else
+==> centos_box:     +	JBOSS_SCRIPT=$JBOSS_HOME/bin/domain.sh
+==> centos_box:     +	if [ -z "$JBOSS_DOMAIN_CONFIG" ]; then
+==> centos_box:     +		JBOSS_DOMAIN_CONFIG=domain.xml
+==> centos_box:     +	fi
+==> centos_box:     +	if [ -z "$JBOSS_HOST_CONFIG" ]; then
+==> centos_box:     +		JBOSS_HOST_CONFIG=host.xml
+==> centos_box:     +	fi
+==> centos_box:     +fi
+==> centos_box:     +
+==> centos_box:     +prog='jboss'
+==> centos_box:     +
+==> centos_box:     +CMD_PREFIX=''
+==> centos_box:     +
+==> centos_box:     +if [ ! -z "$JBOSS_USER" ]; then
+==> centos_box:     +	if [ -r /etc/rc.d/init.d/functions ]; then
+==> centos_box:     +		CMD_PREFIX="daemon --user $JBOSS_USER"
+==> centos_box:     +	else
+==> centos_box:     +		CMD_PREFIX="su - $JBOSS_USER -c"
+==> centos_box:     +	fi
+==> centos_box:     +fi
+==> centos_box:     +
+==> centos_box:     +start() {
+==> centos_box:     +	echo -n "Starting $prog: "
+==> centos_box:     +	if [ -f $JBOSS_PIDFILE ]; then
+==> centos_box:     +		read ppid < $JBOSS_PIDFILE
+==> centos_box:     +		if [ `ps --pid $ppid 2> /dev/null | grep -c $ppid 2> /dev/null` -eq '1' ]; then
+==> centos_box:     +			echo -n "$prog is already running"
+==> centos_box:     +			failure
+==> centos_box:     +	echo
+==> centos_box:     +		return 1
+==> centos_box:     +	else
+==> centos_box:     +		rm -f $JBOSS_PIDFILE
+==> centos_box:     +	fi
+==> centos_box:     +	fi
+==> centos_box:     +	mkdir -p $(dirname $JBOSS_CONSOLE_LOG)
+==> centos_box:     +	cat /dev/null > $JBOSS_CONSOLE_LOG
+==> centos_box:     +
+==> centos_box:     +	mkdir -p $(dirname $JBOSS_PIDFILE)
+==> centos_box:     +	chown $JBOSS_USER $(dirname $JBOSS_PIDFILE) || true
+==> centos_box:     +	#$CMD_PREFIX JBOSS_PIDFILE=$JBOSS_PIDFILE $JBOSS_SCRIPT 2>&1 >> $JBOSS_CONSOLE_LOG &
+==> centos_box:     +	#$CMD_PREFIX JBOSS_PIDFILE=$JBOSS_PIDFILE $JBOSS_SCRIPT &
+==> centos_box:     +
+==> centos_box:     +	if [ ! -z "$JBOSS_USER" ]; then
+==> centos_box:     +		if [ "$JBOSS_MODE" = "standalone" ]; then
+==> centos_box:     +			if [ -r /etc/rc.d/init.d/functions ]; then
+==> centos_box:     +				daemon --user $JBOSS_USER LAUNCH_JBOSS_IN_BACKGROUND=1 JBOSS_PIDFILE=$JBOSS_PIDFILE $JBOSS_SCRIPT -c $JBOSS_CONFIG >> $JBOSS_CONSOLE_LOG 2>&1 &
+==> centos_box:     +			else
+==> centos_box:     +				su - $JBOSS_USER -c "LAUNCH_JBOSS_IN_BACKGROUND=1 JBOSS_PIDFILE=$JBOSS_PIDFILE $JBOSS_SCRIPT -c $JBOSS_CONFIG" >> $JBOSS_CONSOLE_LOG 2>&1 &
+==> centos_box:     +			fi
+==> centos_box:     +		else
+==> centos_box:     +			if [ -r /etc/rc.d/init.d/functions ]; then
+==> centos_box:     +				daemon --user $JBOSS_USER LAUNCH_JBOSS_IN_BACKGROUND=1 JBOSS_PIDFILE=$JBOSS_PIDFILE $JBOSS_SCRIPT --domain-config=$JBOSS_DOMAIN_CONFIG --host-config=$JBOSS_HOST_CONFIG >> $JBOSS_CONSOLE_LOG 2>&1 &
+==> centos_box:     +			else
+==> centos_box:     +				su - $JBOSS_USER -c "LAUNCH_JBOSS_IN_BACKGROUND=1 JBOSS_PIDFILE=$JBOSS_PIDFILE $JBOSS_SCRIPT --domain-config=$JBOSS_DOMAIN_CONFIG --host-config=$JBOSS_HOST_CONFIG" >> $JBOSS_CONSOLE_LOG 2>&1 &
+==> centos_box:     +			fi
+==> centos_box:     +		fi
+==> centos_box:     +	fi
+==> centos_box:     +
+==> centos_box:     +	count=0
+==> centos_box:     +	launched=false
+==> centos_box:     +
+==> centos_box:     +	until [ $count -gt $STARTUP_WAIT ]
+==> centos_box:     +	do
+==> centos_box:     +		grep 'JBAS015874:' $JBOSS_CONSOLE_LOG > /dev/null
+==> centos_box:     +		if [ $? -eq 0 ] ; then
+==> centos_box:     +			launched=true
+==> centos_box:     +			break
+==> centos_box:     +		fi
+==> centos_box:     +		sleep 1
+==> centos_box:     +		let count=$count+1;
+==> centos_box:     +	done
+==> centos_box:     +
+==> centos_box:     +	success
+==> centos_box:     +	echo
+==> centos_box:     +	return 0
+==> centos_box:     +}
+==> centos_box:     +
+==> centos_box:     +stop() {
+==> centos_box:     +	echo -n $"Stopping $prog: "
+==> centos_box:     +	count=0;
+==> centos_box:     +
+==> centos_box:     +	if [ -f $JBOSS_PIDFILE ]; then
+==> centos_box:     +		read kpid < $JBOSS_PIDFILE
+==> centos_box:     +		let kwait=$SHUTDOWN_WAIT
+==> centos_box:     +
+==> centos_box:     +		# Try issuing SIGTERM
+==> centos_box:     +		kill -15 $kpid
+==> centos_box:     +		until [ `ps --pid $kpid 2> /dev/null | grep -c $kpid 2> /dev/null` -eq '0' ] || [ $count -gt $kwait ]
+==> centos_box:     +			do
+==> centos_box:     +			sleep 1
+==> centos_box:     +			let count=$count+1;
+==> centos_box:     +		done
+==> centos_box:     +
+==> centos_box:     +		if [ $count -gt $kwait ]; then
+==> centos_box:     +			kill -9 $kpid
+==> centos_box:     +		fi
+==> centos_box:     +	fi
+==> centos_box:     +	rm -f $JBOSS_PIDFILE
+==> centos_box:     +	success
+==> centos_box:     +	echo
+==> centos_box:     +}
+==> centos_box:     +
+==> centos_box:     +status() {
+==> centos_box:     +	if [ -f $JBOSS_PIDFILE ]; then
+==> centos_box:     +		read ppid < $JBOSS_PIDFILE
+==> centos_box:     +		if [ `ps --pid $ppid 2> /dev/null | grep -c $ppid 2> /dev/null` -eq '1' ]; then
+==> centos_box:     +			echo "$prog is running (pid $ppid)"
+==> centos_box:     +			return 0
+==> centos_box:     +		else
+==> centos_box:     +			echo "$prog dead but pid file exists"
+==> centos_box:     +			return 1
+==> centos_box:     +		fi
+==> centos_box:     +	fi
+==> centos_box:     +	echo "$prog is not running"
+==> centos_box:     +	return 3
+==> centos_box:     +}
+==> centos_box:     +
+==> centos_box:     +case "$1" in
+==> centos_box:     +	start)
+==> centos_box:     +		start
+==> centos_box:     +		;;
+==> centos_box:     +	stop)
+==> centos_box:     +		stop
+==> centos_box:     +		;;
+==> centos_box:     +	restart)
+==> centos_box:     +		$0 stop
+==> centos_box:     +		$0 start
+==> centos_box:     +		;;
+==> centos_box:     +	status)
+==> centos_box:     +		status
+==> centos_box:     +		;;
+==> centos_box:     +	*)
+==> centos_box:     +		## If no parameters are given, print which are avaiable.
+==> centos_box:     +		echo "Usage: $0 {start|stop|status|restart|reload}"
+==> centos_box:     +		exit 1
+==> centos_box:     +		;;
+==> centos_box:     +esac[2015-10-10T19:22:17+02:00] INFO: template[/etc/init.d/jboss] owner changed to 0
+==> centos_box: [2015-10-10T19:22:17+02:00] INFO: template[/etc/init.d/jboss] group changed to 0
+==> centos_box: [2015-10-10T19:22:17+02:00] INFO: template[/etc/init.d/jboss] mode changed to 755
+==> centos_box: 
+==> centos_box:     - change mode from '' to '0755'
+==> centos_box:     - change owner from '' to 'root'
+==> centos_box:     - change group from '' to 'root'
+==> centos_box: 
+==> centos_box:     - restore selinux security context
+==> centos_box:   * directory[/etc/jboss-as] action create
+==> centos_box: [2015-10-10T19:22:17+02:00] INFO: directory[/etc/jboss-as] created directory /etc/jboss-as
+==> centos_box:     
+==> centos_box: - create new directory /etc/jboss-as
+==> centos_box: [2015-10-10T19:22:17+02:00] INFO: directory[/etc/jboss-as] owner changed to 0
+==> centos_box: [2015-10-10T19:22:17+02:00] INFO: directory[/etc/jboss-as] group changed to 0
+==> centos_box: [2015-10-10T19:22:17+02:00] INFO: directory[/etc/jboss-as] mode changed to 755
+==> centos_box:     
+==> centos_box: - change mode from '' to '0755'
+==> centos_box:     
+==> centos_box: - change owner from '' to 'root'
+==> centos_box:     
+==> centos_box: - change group from '' to 'root'
+==> centos_box:     
+==> centos_box: - restore selinux security context
+==> centos_box:   
+==> centos_box: * template[/etc/jboss-as/jboss-as.conf] action create
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: template[/etc/jboss-as/jboss-as.conf] created file /etc/jboss-as/jboss-as.conf
+==> centos_box:     
+==> centos_box: - create new file /etc/jboss-as/jboss-as.conf
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: template[/etc/jboss-as/jboss-as.conf] updated file contents /etc/jboss-as/jboss-as.conf
+==> centos_box:     
+==> centos_box: - update content in file /etc/jboss-as/jboss-as.conf from none to 6f0cd1
+==> centos_box:     
+==> centos_box: --- /etc/jboss-as/jboss-as.conf	2015-10-10 19:22:18.057004752 +0200
+==> centos_box:     
+==> centos_box: +++ /etc/jboss-as/.jboss-as.conf20151010-8506-y1iwrk	2015-10-10 19:22:18.057004752 +0200
+==> centos_box:     
+==> centos_box: @@ -1 +1,11 @@
+==> centos_box:     
+==> centos_box: +# This file was generated by Chef for 'localhost'.
+==> centos_box:     
+==> centos_box: +# Do NOT edit this file by hand!
+==> centos_box:     
+==> centos_box: +
+==> centos_box:     
+==> centos_box: +# The username who should own the process.
+==> centos_box:     
+==> centos_box: +#
+==> centos_box: 
+==> centos_box:     +JBOSS_USER=jboss
+==> centos_box:     +
+==> centos_box:     +JBOSS_CONSOLE_LOG=/var/log/jboss/console.log
+==> centos_box: 
+==> centos_box:     +
+==> centos_box:     +JBOSS_HOME=/opt/jboss
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: template[/etc/jboss-as/jboss-as.conf] owner changed to 0
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: template[/etc/jboss-as/jboss-as.conf] group changed to 0
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: template[/etc/jboss-as/jboss-as.conf] mode changed to 644
+==> centos_box:     
+==> centos_box: - change mode from '' to '0644'
+==> centos_box:     
+==> centos_box: - change owner from '' to 'root'
+==> centos_box:     
+==> centos_box: - change group from '' to 'root'
+==> centos_box:     
+==> centos_box: - restore selinux security context
+==> centos_box:   
+==> centos_box: * directory[/opt/jboss/standalone/log] action delete
+==> centos_box:  (up to date)
+==> centos_box:   * directory[/var/log/jboss] action create
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: directory[/var/log/jboss] created directory /var/log/jboss
+==> centos_box:     
+==> centos_box: - create new directory /var/log/jboss
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: directory[/var/log/jboss] owner changed to 501
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: directory[/var/log/jboss] group changed to 501
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: directory[/var/log/jboss] mode changed to 2775
+==> centos_box:     
+==> centos_box: - change mode from '' to '02775'
+==> centos_box:     
+==> centos_box: - change owner from '' to 'jboss'
+==> centos_box:     
+==> centos_box: - change group from '' to 'jboss'
+==> centos_box:     
+==> centos_box: - restore selinux security context
+==> centos_box:   
+==> centos_box: * template[/opt/jboss/standalone/configuration/standalone.xml] action create
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: template[/opt/jboss/standalone/configuration/standalone.xml] backed up to /var/chef/backup/opt/jboss/standalone/configuration/standalone.xml.chef-20151010192218.517018
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: template[/opt/jboss/standalone/configuration/standalone.xml] updated file contents /opt/jboss/standalone/configuration/standalone.xml
+==> centos_box:     
+==> centos_box: - update content in file /opt/jboss/standalone/configuration/standalone.xml from 38d40e to ce59e3
+==> centos_box:     
+==> centos_box: --- /opt/jboss/standalone/configuration/standalone.xml	2014-11-21 05:43:26.000000000 +0100
+==> centos_box:     
+==> centos_box: +++ /opt/jboss/standalone/configuration/.standalone.xml20151010-8506-f3d87	2015-10-10 19:22:18.511004754 +0200
+==> centos_box:     
+==> centos_box: @@ -359,7 +359,7 @@
+==> centos_box:     
+==> centos_box:              <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
+==> centos_box:     
+==> centos_box:          </interface>
+==> centos_box:     
+==> centos_box:          <interface name="public">
+==> centos_box:     
+==> centos_box: -            <inet-address value="${jboss.bind.address:127.0.0.1}"/>
+==> centos_box:     
+==> centos_box: +            <inet-address value="${jboss.bind.address:0.0.0.0}"/>
+==> centos_box:     
+==> centos_box:          </interface>
+==> centos_box:     
+==> centos_box:          <!-- TODO - only show this if the jacorb subsystem is added  -->
+==> centos_box:     
+==> centos_box:          <interface name="unsecure">
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: template[/opt/jboss/standalone/configuration/standalone.xml] mode changed to 755
+==> centos_box:     
+==> centos_box: - change mode from '0644' to '0755'
+==> centos_box:     
+==> centos_box: - restore selinux security context
+==> centos_box:   
+==> centos_box: * link[/opt/jboss/standalone/log] action create
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: link[/opt/jboss/standalone/log] created
+==> centos_box:     
+==> centos_box: - create symlink at /opt/jboss/standalone/log to /var/log/jboss
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: link[/opt/jboss/standalone/log] owner changed to 501
+==> centos_box: [2015-10-10T19:22:18+02:00] INFO: link[/opt/jboss/standalone/log] group changed to 501
+==> centos_box:     
+==> centos_box: - change owner from '' to 'jboss'
+==> centos_box:     
+==> centos_box: - change group from '' to 'jboss'
+==> centos_box:   
+==> centos_box: * service[jboss] action disable
+==> centos_box:  (up to date)
+==> centos_box:   * service[jboss] action start
+==> centos_box: [2015-10-10T19:22:22+02:00] INFO: service[jboss] started
+==> centos_box:     
+==> centos_box: - start service service[jboss]
+==> centos_box: Recipe: jboss-dev-cookbook::deploy
+==> centos_box:   
+==> centos_box: * remote_file[/tmp/testweb.zip] action create
+==> centos_box: [2015-10-10T19:22:24+02:00] INFO: remote_file[/tmp/testweb.zip] created file /tmp/testweb.zip
+==> centos_box:     
+==> centos_box: - create new file /tmp/testweb.zip
+==> centos_box: [2015-10-10T19:22:24+02:00] INFO: remote_file[/tmp/testweb.zip] updated file contents /tmp/testweb.zip
+==> centos_box:     
+==> centos_box: - update content in file /tmp/testweb.zip from none to 596c0b
+==> centos_box:     
+==> centos_box: (new content is binary, diff output suppressed)
+==> centos_box:     
+==> centos_box: - restore selinux security context
+==> centos_box:   
+==> centos_box: * bash[deploy app] action run
+==> centos_box: [2015-10-10T19:22:24+02:00] INFO: bash[deploy app] ran successfully
+==> centos_box: 
+==> centos_box:     - execute "bash"  "/tmp/chef-script20151010-8506-c35l7y"
+==> centos_box:   * service[jboss] action restart
+==> centos_box: [2015-10-10T19:22:30+02:00] INFO: service[jboss] restarted
+==> centos_box: 
+==> centos_box:     - restart service service[jboss]
+==> centos_box: [2015-10-10T19:22:30+02:00] INFO: Chef Run complete in 348.319240628 seconds
+==> centos_box: [2015-10-10T19:22:30+02:00] INFO: Skipping removal of unused files from the cache
+==> centos_box: 
+==> centos_box: Running handlers:
+==> centos_box: [2015-10-10T19:22:30+02:00] INFO: Running report handlers
+==> centos_box: Running handlers complete
+==> centos_box: [2015-10-10T19:22:30+02:00] INFO: Report handlers complete
+==> centos_box: Chef Client finished, 18/21 resources updated in 05 minutes 50 seconds
