@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
 
 #-----------------------------------Virtualbox Centos---------------
-config.vm.define "linux_box" do |d2|
+config.vm.define "centos_box" do |d2|
     d2.vm.provider "virtualbox" do |v|
       v.name = "devops"
       v.memory = 2048
@@ -15,7 +15,7 @@ config.vm.define "linux_box" do |d2|
     set_solo(d2)
 end
 #-----------------------------------Virtualbox Ubuntu---------------
-config.vm.define "linux_box" do |d3|
+config.vm.define "ubuntu_box" do |d3|
     d3.vm.provider "virtualbox" do |v|
       v.name = "devops"
       v.memory = 2048
