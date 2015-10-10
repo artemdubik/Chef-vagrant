@@ -17,7 +17,7 @@ end
 #-----------------------------------Virtualbox Ubuntu---------------
 config.vm.define "ubuntu_box" do |d3|
     d3.vm.provider "virtualbox" do |v|
-      v.name = "devops"
+      v.name = "devops2"
       v.memory = 2048
       v.cpus = 2
       v.gui = true
